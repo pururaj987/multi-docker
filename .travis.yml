@@ -10,14 +10,14 @@ script:
   - docker run -e CI=true pururaj/react-test npm run test
 
 after_sucess:
-  - docker build -t pururaj/multi-client ./client
-  - docker build -t pururaj/multi-nginx  ./nginx
-  - docker build -t pururaj/multi-server ./server
-  - docker build -t pururaj/multi-worker ./worker
+  - docker build -t pururaj987/multi-client ./client
+  - docker build -t pururaj987/multi-nginx  ./nginx
+  - docker build -t pururaj987/multi-server ./server
+  - docker build -t pururaj987/multi-worker ./worker
   # login to Docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # push to docker hub
-  - docker push pururaj/multi-client
-  - docker push pururaj/multi-nginx
-  - docker push pururaj/multi-server
-  - docker push pururaj/multi-worker
+  - docker push pururaj987/multi-client
+  - docker push pururaj987/multi-nginx
+  - docker push pururaj987/multi-server
+  - docker push pururaj987/multi-worker

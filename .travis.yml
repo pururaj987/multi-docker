@@ -14,3 +14,10 @@ after_sucess:
   - docker build -t pururaj/multi-nginx  ./nginx
   - docker build -t pururaj/multi-server ./server
   - docker build -t pururaj/multi-worker ./worker
+  # login to Docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # push to docker hub
+  - docker push pururaj/multi-client
+  - docker push pururaj/multi-nginx
+  - docker push pururaj/multi-server
+  - docker push pururaj/multi-worker
